@@ -1,0 +1,17 @@
+.swiper-slide {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+#o2_swiper {
+  -webkit-overflow-scrolling: touch;
+}
+.scene-1 {
+  &.swiper-slide-active {
+
+  }
+}
+.scene-2 {
+  &.swiper-slide-active {
+
+  }
+}

@@ -1,0 +1,45 @@
+@mixin bg($url) {
+  width: width($url);
+  height: height($url);
+  background-size: size($url);
+  background-image: url($url);
+  background-repeat: no-repeat;
+}
+@mixin size($width,$height,$top,$left) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+@mixin text($top) {
+  text-align: center;
+  // margin-bottom: 2px;
+  color: #fff;
+  text-shadow: 0px 0px 10px #386296, 0 0px 10px #386296, 0px 0px 10px #386296, 0px 0px 10px #386296, 0px 0px 10px #386296;
+  font-size: 14px;
+  letter-spacing: 1px;
+  @media screen and (max-width:321px){
+    font-size: 12px;
+  }
+  @media screen and (min-width:321px) and (max-width:400px){
+    font-size: 14px;
+  }
+  @media screen and (min-width:400px){
+    font-size: 15px;
+  }
+}
+
+@mixin text-animation($delay:0) {
+  @extend .animated;
+  animation: text 1s $delay forwards;
+}
+
+@mixin text-animation-group($num, $delay) {
+  @for $i from 1 through $num {
+    .text:nth-of-type(#{$i}) {
+      @include text-animation($delay + $i * 0.2s);
+    }
+  }
+}
+

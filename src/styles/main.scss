@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import "./base.scss";
+@import "./mixin.scss";
+@import "./section.scss";
+@import "./loading.scss";
+@import "./animation.scss";
+@import "./music.scss";
+.main {
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-color: #e3e3e3;
+  .title {
+    color: #FFF;
+    height: 400px;
+    line-height: 400px;
+    font-size: 48px;
+    text-align: center;
+  }
+  .logo {
+    text-align: center;
+    img {
+      width: 512px;
+      height: 512px;
+    }
+  }
+}
+.indicator {
+  @include size(0.73rem, 0.66rem, auto, 2.8rem);
+  bottom: 0.5rem;
+  // background: url() no-repeat;
+  background-size: 100%;
+  z-index: 10;
+  opacity: 0;
+  &.active {
+    @extend .animated;
+    animation: fadeIn 2s forwards, arrow-icon 2s forwards infinite;
+  }
+}
